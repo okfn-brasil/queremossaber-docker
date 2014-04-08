@@ -29,6 +29,7 @@ RUN sed -i "s|/var/lib/postgresql/9.1/main|$PGDATA|g" /etc/postgresql/9.1/main/p
 RUN sed -i "s|/etc/postgresql/9.1/main|$PGDATA|g" /etc/postgresql/9.1/main/postgresql.conf
 
 EXPOSE 80
+EXPOSE 25
 
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.alaveteli.conf
 ADD start-alaveteli.sh /usr/local/bin/start-alaveteli.sh
