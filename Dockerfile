@@ -5,6 +5,7 @@
 FROM ubuntu
 MAINTAINER Vitor Baptista <vitor@vitorbaptista.com>
 
+ENV DEBIAN_FRONTEND noninteractive
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise universe" >> /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get upgrade -y
