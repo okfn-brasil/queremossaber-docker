@@ -5,6 +5,11 @@
 FROM ubuntu
 MAINTAINER Vitor Baptista <vitor@vitorbaptista.com>
 
+# Fix Upstart
+# https://github.com/docker/docker/issues/1024
+RUN dpkg-divert --local --rename --add /sbin/initctl
+RUN ln -s /bin/true /sbin/initctl
+
 ENV DEBIAN_FRONTEND noninteractive
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise universe" >> /etc/apt/sources.list
 RUN apt-get update
