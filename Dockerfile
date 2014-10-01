@@ -11,7 +11,7 @@ RUN apt-get upgrade -y
 RUN apt-get install -y curl sudo rsyslog supervisor cron
 
 # Install Alaveteli configured for queremossaber.org.br
-RUN curl -O https://raw.github.com/mysociety/commonlib/master/bin/install-site.sh
+RUN curl -O https://raw.githubusercontent.com/mysociety/commonlib/master/bin/install-site.sh
 RUN sh install-site.sh --default alaveteli alaveteli queremossaber.org.br
 
 # Run alaveteli in foreground
